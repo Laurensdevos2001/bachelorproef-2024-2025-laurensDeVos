@@ -20,7 +20,7 @@
 % \course{Bachelor thesis}
 % \assignmenttype{Research proposal}
 
-\academicyear{2023-2024} % TODO: pas het academiejaar aan
+\academicyear{2024-2025} % TODO: pas het academiejaar aan
 
 % TODO: Werktitel
 \title{Het verbeteren van compliance- en governancevereisten bij DocShifter, een gespecialiseerd bedrijf in documentconversietechnologie, door de praktische implementatie van DevSecOps, met een focus op klantgegevensbescherming en interne softwareontwikkelingsprocessen.}
@@ -57,7 +57,7 @@
     
     \begin{abstract}
     
-    DocShifter, een bedrijf gespecialiseerd in documentconversietechnologie, kampt met significante uitdagingen op het gebied van compliance en governance, vooral met betrekking tot de bescherming van klantgegevens en naleving van de Algemene Verordening Gegevensbescherming (AVG). Deze problemen bedreigen niet alleen de bedrijfsvoering, maar ook de reputatie van DocShifter, wat de urgentie van dit onderzoek benadrukt.
+    DocShifter, een bedrijf gespecialiseerd in documentconversietechnologie, kampt met significante uitdagingen op het gebied van compliance en governance, vooral met betrekking tot de bescherming van klantgegevens en naleving van de Algemene Verordening Gegevensbescherming (AVG).
     
     Om deze uitdagingen aan te pakken, is een uitgebreide literatuurstudie uitgevoerd. Deze studie analyseert de specifieke activiteiten van DocShifter, de compliance- en governancevereisten waaraan het moet voldoen, en de mogelijke gevolgen van niet-naleving. Op basis van deze analyse is een methodologie ontwikkeld, waarin een nulmeting de huidige status van compliance en governance evalueert. Vervolgens worden DevSecOps-praktijken geïmplementeerd, waarna de impact op de naleving van regelgeving en gegevensbescherming wordt gemeten.
     
@@ -111,90 +111,80 @@
     
    \section{Literatuurstudie}%
    \label{sec:literatuurstudie}
-   \subsection{Wat is DevSecOps}
+   \subsection{Inleiding tot DevSecOps en Compliance}
    DevSecOps, een samenvoeging van development, security en operations, is een benadering die beveiliging integreert als een gedeelde verantwoordelijkheid gedurende de volledige \\ IT-levenscyclus. Volgens Red Hat (2020) gaat dit concept verder dan het traditionele DevOps-model door beveiliging te betrekken vanaf de vroegste stadia van ontwikkeling en doorlopend tot de eindfase van het project.
    Traditioneel werd beveiliging vaak gezien als een afzonderlijke taak die pas aan het einde van het ontwikkelingsproces werd uitgevoerd. Met de toegenomen behoefte aan snellere ontwikkelingscycli in DevOps, is het echter cruciaal geworden om beveiliging continu en integraal te maken in het gehele proces. Dit betekent dat beveiligingsteam vanaf het begin betrokken zijn bij het project, en dat beveiligingscontroles worden geautomatiseerd en geschikte tools worden geselecteerd.
    De nadruk van DevSecOps ligt op het belang van vroegtijdige en doorlopende beveiliging. Dit benadrukt niet alleen het belang van het automatiseren van beveiligingscontroles, maar ook de noodzaak om beveiligingsteams vanaf het begin van het ontwikkelingsproces te betrekken.
    Effectieve implementatie van DevSecOps vereist dat beveiliging wordt geïntegreerd gedurende de volledige levenscyclus van applicaties. Automatisering speelt een cruciale rol in het vereenvoudigen van repetitieve taken en het handhaven van de ontwikkelingssnelheid. Bovendien breidt DevSecOps zich uit naar moderne technologieën zoals containers en microservices, die aangepaste beveiligingspraktijken vereisen om \\ applicatie- en infrastructuurbeveiliging te waarborgen \autocite{redhat2023}.
    
-   \subsection{Compliance in DevSecOps}
+   \subsection{Belang van governance en compliance in DevSecOps}
    
-   Het integreren van compliance in DevSecOps is essentieel om te voldoen aan industrienormen, wetten en regelgeving. Volgens Zeeshan (2020) moeten organisaties ervoor zorgen dat hun processen niet alleen veilig zijn, maar ook voldoen aan regelgeving zoals de GDPR (voor Europese landen), CCPA, FISMA en andere relevante standaarden. Compliance moet een continu proces zijn dat is ingebed in de gehele DevSecOps-pijplijn, met geïntegreerde controles gedurende de\\ontwikkelings- en operationele fasen.
-   Automatisering speelt een cruciale rol bij het handhaven van compliance. Door geautomatiseerde tools te gebruiken die continu de naleving van regelgeving controleren, kunnen organisaties ervoor zorgen dat compliance-eisen consistent worden nageleefd zonder de snelheid van de ontwikkeling te vertragen. "Compliance-as-code" is een benadering waarbij compliance-eisen worden geprogrammeerd in dezelfde taal en tools die ontwikkelaars gebruiken voor applicatieontwikkeling, waardoor nalevingsregels automatisch worden toegepast en gevalideerd tijdens het bouw- en implementatieproces.
-   Om compliance effectief te handhaven, moeten ontwikkelaars en operationele teams regelmatig worden getraind in de relevante wetten en regelgeving. Tools en platforms voor het beheren van compliance kunnen integreren met bestaande CI/CD-pijplijnen, waardoor elke codewijziging automatisch wordt gecontroleerd op naleving van de relevante regelgeving. Dit omvat statische en dynamische beveiligingstests en het bewaken van de integriteit van softwarecomponenten.
-   Continue monitoring en rapportage zijn essentieel om naleving te waarborgen. Monitoringtools die real-time inzicht geven in de nalevingsstatus, stellen organisaties in staat snel te reageren op mogelijke schendingen en corrigerende maatregelen te nemen. Dit versterkt het vertrouwen van klanten en partners in de beveiligingspraktijken van de organisatie.
-   Door compliance effectief te integreren in het DevSecOps-proces, kunnen organisaties niet alleen voldoen aan de noodzakelijke regelgeving, maar ook hun algehele beveiligingshouding verbeteren en de risico's van datalekken en andere beveiligingsincidenten verminderen. Dit zorgt voor een robuust en betrouwbaar ontwikkelings- en operationeel proces en versterkt het vertrouwen van klanten en partners.\autocite{Zeeshan2020}\\
+  In DevSecOps is governance van cruciaal belang om ervoor te zorgen dat beveiliging en compliance geïntegreerd worden binnen de ontwikkelings- en operationele processen. Dit gaat verder dan alleen het toevoegen van beveiligingscontroles; het vereist een gestructureerde benadering waarbij beleidsregels, standaarden en compliance-eisen consistent worden nageleefd en toegepast in de volledige softwarelevenscyclus.
+  
+  Een Gartner-enquête uit 2022 toonde aan dat 90\% van de organisaties de noodzaak ziet om governance en compliance te verbeteren door een betere integratie van beveiligingsoperaties \autocite{GlobalSign2022}. DevSecOps maakt dit mogelijk door beveiligingscontroles vroeg in de softwareontwikkelingscyclus te integreren, waardoor risico's beter beheerst kunnen worden en compliance automatisch kan worden gehandhaafd. Traditioneel werden beveiliging en compliance als losse stappen aan het einde van een ontwikkelproces toegevoegd, wat vaak leidde tot vertragingen en hoge kosten. Met DevSecOps worden beveiliging en compliance echter onderdeel van het ontwikkelproces, waardoor problemen vroegtijdig kunnen worden opgespoord en opgelost.
+  
+  Volgens de OWASP DevSecOps-richtlijnen is het hanteren van een "shift-left" benadering een sleutelelement van governance binnen DevSecOps. Deze benadering houdt in dat beveiligings- en complianceactiviteiten al vroeg in het ontwikkelproces worden geïmplementeerd, bijvoorbeeld tijdens het coderen en testen. Dit verkleint niet alleen de kans op beveiligingsincidenten, maar zorgt ook voor een continue naleving van regelgeving gedurende de hele levenscyclus van de applicatie.\autocite{Project2019}
+  
+  Kortom, goede governance in DevSecOps stelt organisaties in staat om de naleving van regelgeving en beveiligingsstandaarden effectief te waarborgen. Dit verbetert niet alleen de veiligheid van softwaretoepassingen, maar helpt ook bij het voldoen aan wettelijke en industriële normen zoals ISO 27001 en AVG, wat essentieel is voor organisaties die opereren in gereguleerde sectoren.
+  
    
-   Sinds 2020 is er een groeiende interesse in het bespreken van compliance-aspecten binnen DevSecOps, zoals blijkt uit een toename van publicaties op dit gebied. Volgens Ramaj (2022) komt dit door strengere regelgeving en toenemende cybersecuritybedreigingen, waardoor het belang van compliance steeds duidelijker wordt.
-   Compliance initiatie omvat het definiëren van de gewenste staat van naleving van beveiligingsmaatregelen en het specificeren van nalevingsvereisten. Compliance management houdt alle processen in die verband houden met het beheer van naleving, zoals automatisering, testen en verificatie, validatie, controle en monitoring, bewustwording en training, en evaluatie. Technische compliance-aspecten betreffen de technische middelen die worden gebruikt voor het beheren van naleving, zoals compliance-as-code en diverse nalevingstools.
-   Organisaties moeten investeren in geautomatiseerde nalevingscontroles, training van personeel en het gebruik van geschikte tools en technologieën om effectieve compliance te waarborgen in een DevSecOps-omgeving. Door compliance te integreren in het ontwikkelingsproces kunnen organisaties beter voldoen aan regelgeving, risico's verminderen en vertrouwen opbouwen bij klanten en partners.\autocite{Ramaj2022}
+   \subsection{Automatisering van compliance binnen DevSecOps}
    
-   \subsection{Beveiligingsrisico's in DevSecOps}
+   Automatisering speelt een cruciale rol in het handhaven van compliance binnen DevSecOps volgens Odorfer (2021). Door beleid als code (policy as code) te implementeren, kunnen organisaties de naleving van beveiligingsnormen en -procedures op een consistente en schaalbare manier waarborgen. Volgens de AWS Security Blog stelt beleid als code teams in staat om beveiligings- en compliance-eisen te automatiseren door regels in code te definiëren, die vervolgens automatisch kunnen worden toegepast en gecontroleerd in de ontwikkelings- en operationele processen.
    
-    Volgens Chandramouli (2022) vereist het integreren van beveiliging in de softwareontwikkelingslevenscyclus (SDLC), vooral met de complexiteit van microservices en cloudimplementaties, het aannemen van een DevSecOps-model. Dit model zorgt ervoor dat beveiliging een integraal onderdeel is van het ontwikkelingsproces in plaats van een bijzaak. Door het implementeren van geautomatiseerde beveiligingstests, robuuste toegangscontroles en uitgebreide tools voor kwetsbaarheidsbeheer, kunnen organisaties het risico op aanvallen die gebruikmaken van de ingewikkeldheden van moderne softwareomgevingen aanzienlijk verminderen. Door beveiliging als prioriteit te stellen gedurende het gehele ontwikkelingsproces, kunnen teams software ontwikkelen die zowel veerkrachtig als wendbaar is.\\ \autocite{Chandramouli2022}
+   Deze aanpak minimaliseert niet alleen menselijke fouten, maar zorgt ook voor een snellere feedbacklus, waardoor teams proactief kunnen reageren op compliance-issues voordat ze problematisch worden. Door tools en technologieën in te zetten die beleidsregels automatisch toepassen, kunnen organisaties de risico's van niet-naleving verlagen en de snelheid van softwarelevering verhogen, wat cruciaal is in de huidige snel veranderende digitale omgeving.
    
-   \subsection{Best Practices voor het Implementeren van DevSecOps}
+   Bovendien maakt de automatisering van compliance het mogelijk om voortdurend te monitoren en rapporteren over de naleving, waardoor teams beter in staat zijn om te voldoen aan zowel interne beleidslijnen als externe regelgeving, zoals de AVG en andere industriestandaarden.\autocite{Odorfer2021}
    
-   Volgens Rajavi en Desai (2021) vereist het succesvol implementeren van DevSecOps een aantal best practices. Ten eerste is training cruciaal. Goed ontworpen trainingsprogramma's kunnen het bewustzijn van beveiliging vergroten en benadrukken hoe individuen kunnen bijdragen aan beveiliging. Ten tweede is het implementeren van beveiligingstools van groot belang. Deze tools moeten geïntegreerd zijn in bestaande systemen en continue monitoring en oplossingen bieden tijdens het ontwikkelingsproces. Het is daarom dus ook het belangrijkste onderdeel om aan DevSecOps te doen. Ten derde is het nemen van proactieve maatregelen essentieel. Dit omvat het beveiligen van alle componenten zoals code, databases en netwerken, door middel van diverse controles, veilig coderen en het filteren van verkeer. \autocite{RajaviDesai2021}
+   \subsection{Specifieke regelgeving en standaarden relevant voor DevSecOps}
+   
+  In het kader van DevSecOps is het essentieel om op de hoogte te zijn van specifieke regelgeving en standaarden die invloed hebben op de ontwikkeling en het beheer van softwareapplicaties. Een belangrijke wetgeving in Europa is de Algemene Verordening Gegevensbescherming (AVG), die strikte richtlijnen biedt voor de bescherming van persoonlijke gegevens. De AVG verplicht organisaties om passende technische en organisatorische maatregelen te nemen om de privacy van klanten te waarborgen en hen te beschermen tegen gegevensinbreuken .
+  
+  De AVG legt ook de verantwoordelijkheid bij organisaties om transparant te zijn over hoe ze gegevens verzamelen, opslaan en verwerken. Dit is cruciaal voor DevSecOps-teams, aangezien zij beveiliging en compliance in de vroege stadia van de softwarelevenscyclus moeten integreren. Door de richtlijnen van de AVG te volgen, kunnen organisaties niet alleen hun juridische verplichtingen nakomen, maar ook het vertrouwen van klanten vergroten door transparante en veilige gegevensverwerking.
+  
+  Bovendien kunnen DevSecOps-teams profiteren van best practices en richtlijnen van andere organisaties, zoals de Open Web Application Security Project (OWASP), die helpen bij het implementeren van veilige ontwikkelingspraktijken en het handhaven van compliance met relevante regelgeving.
+  \autocite{EU2022}
+  
+  \subsection{Best practices voor compliance-gedreven DevSecOps-implementatie}
+  
+  Volgens OWASP (2021) is het implementeren van best practices voor compliance-gedreven DevSecOps essentieel voor het effectief integreren van beveiliging en compliance binnen de softwareontwikkelingslevenscyclus. Volgens de OWASP DevSecOps Guideline moeten organisaties een proactieve aanpak hanteren die gericht is op het integreren van beveiligingsmaatregelen in alle fasen van de ontwikkeling. Dit betekent dat beveiliging niet als een afzonderlijke stap aan het einde van het ontwikkelingsproces moet worden gezien, maar als een continu proces dat begint met de planningsfase en zich uitstrekt tot en met de implementatie en het onderhoud van de software.\autocite{OWASP2021}
+  
+  Een belangrijk aspect van deze proactieve benadering is het automatiseren van beveiligingscontroles en compliance-eisen. Puppet benadrukt het belang van automatisering in hun blog over een proactieve beveiligingsaanpak, waarbij ze aangeven dat automatisering helpt bij het minimaliseren van menselijke fouten en het versnellen van het compliance-proces (Puppet, 2022). Dit maakt het mogelijk om consistentie en betrouwbaarheid in beveiligingsmaatregelen te waarborgen en snel te reageren op eventuele compliance-issues die zich kunnen voordoen.\autocite{Puppet2022}
+  
+  Red Hat wijst ook op het belang van een integrale DevSecOps-aanpak, waarbij samenwerking tussen ontwikkeling, beveiliging en operaties wordt bevorderd. Dit bevordert een cultuur van gezamenlijke verantwoordelijkheid voor beveiliging en compliance, wat essentieel is voor het succes van een DevSecOps-implementatie (Red Hat, 2023). Door teams in staat te stellen om samen te werken en gedeelde doelen te hebben, kunnen organisaties beter inspelen op de voortdurende veranderingen in regelgeving en beveiligingseisen.\autocite{RedHat2021}
+  
+  
+  
+  
+  
     
     %---------- Methodologie ------------------------------------------------------
     \section{Methodologie}%
     \label{sec:methodologie}
     
-    \noindent Om de implementatie van DevSecOps te onderzoeken en te begrijpen hoe deze kan bijdragen aan het versterken van compliance- en governancevereisten, zal er een methodologie voorgesteld worden die verschillende fasen omvat. 
+    \noindent Om de implementatie van DevSecOps te onderzoeken met een focus op governance- en compliancevereisten, wordt de methodologie voorgesteld die uit drie fasen bestaat. 
     
     \subsection{Fase 1: Analyse van huidige compliance- en governancevereisten}
     \noindent De eerste fase omvat een grondige analyse van de huidige compliance- en governancevereisten van DocShifter. Dit proces zal inhouden:
     
     \begin{itemize}
-        \item Stakeholder interviews: Relevante stakeholders zoals ontwikkelaars en devops engineers interviewen om inzicht te krijgen in huidige vereisten en knelpunten binnen DocShifter. Dit zal helpen bij het verstrekken van belangrijke informatie over de behoeften en verwachtingen.
-        \item Procesanalyse: In de interviews zal ook bevraagd worden naar de huidige processen en workflows binnen DocShifter om inefficiënties en risico's te identificeren.
-        \item requirement specificatie: Het opstellen van een gedetailleerd requirementanalyse document waarin de vereisten voor de implementatie van DevSecOps worden vastgelegd. Dit zal dienen als basis voor de verdere ontwikkeling.
+        \item Stakeholder interviews: Het uitvoeren van interviews met een select aantal relevante stakeholders, zoals ontwikkelaars en DevOps-engineers, om hun ervaringen en percepties van de huidige compliance-eisen te verzamelen.
+        \item Procesanalyse: Gelijktijdig met de interviews worden de bestaande processen en workflows binnen DocShifter in kaart gebracht om inefficiënties en risico’s te identificeren.
     \end{itemize}
     
     \subsection{Fase 2: Literatuurstudie}
-    \noindent Een uitgebreide literatuurstudie zal worden uitgevoerd om inzicht te krijgen in de huidige stand van zaken rondom DevSecOps, compliance-frameworks (zoals GDPR), en governanceprincipes. Hierbij wordt speciale aandacht besteed aan:
+    \noindent Een literatuurstudie wordt uitgevoerd die specifiek ingaat op de governance- en compliancevereisten, met nadruk op:
     
     \begin{itemize}
-        \item Best practices en case studies die relevant zijn voor de context van DocShifter.
-        \item Mogelijke benaderingen en tools die kunnen worden toegepast om de gestelde doelstellingen te bereiken.
+        \item Best Practices en Case Studies: Het identificeren van best practices en relevante case studies die specifiek gericht zijn op de geïdentificeerde vereisten. Deze inzichten zullen helpen bij het vormen van een solide basis voor de implementatie van DevSecOps.
     \end{itemize}
     
-    \subsection{Fase 3: Opstellen van een long list}
-    \noindent Op basis van de literatuurstudie en de analyse van de huidige situatie zal een long list van mogelijke DevSecOps-implementaties worden opgesteld. Deze lijst omvat frameworks, tools en best practices die in aanmerking komen voor verdere evaluatie. Elk item op deze lijst wordt beoordeeld op:
+    \subsection{Fase 3: Evaluatie en Aanbevelingen}
+    \noindent Op basis van de inzichten uit de literatuurstudie en de eerdere analyse worden aanbevelingen gedaan voor de implementatie van DevSecOps binnen DocShifter. Dit omvat:
     
     \begin{itemize}
-        \item Relevantie voor DocShifter.
-        \item Toepasbaarheid in de huidige omgeving
-        \item potentieel om de gestelde doelstellingen te bereiken.
-    \end{itemize}
-
-    \subsection{Fase 4: Evaluatie en Short List}
-    \noindent De long list wordt geëvalueerd om een short list van de meest geschikte opties te bepalen. Het evaluatieproces omvat criteria zoals:
-    
-    \begin{itemize}
-        \item Effectiviteit
-        \item implementatiegemak
-        \item Schaalbaarheid
-        \item ondersteuning voor compliance- en governancevereisten.
-    \end{itemize}
-    
-    \subsection{Fase 5: Proof of Concept (PoC)}
-    \noindent De meest veelbelovende DevSecOps-oplossingen worden geselecteerd voor een Proof of Concept (PoC). De PoC omvat:
-    
-    \begin{itemize}
-        \item Praktische implementaties en tests van de gekozen oplossingen.
-        \item Het vastleggen van vooraf bepaalde, objectieve succescriteria om de effectiviteit van de oplossingen te evalueren. Deze criteria kunnen prestatie-indicatoren, compliance met regelgeving, en verbeteringen in processen omvatten.
-        \item Een gedetailleerde analyse en documentatie van de resultaten van de PoC om inzicht te geven in de prestaties en voordelen van de geïmplementeerde oplossingen.
-    \end{itemize}
-
-    \subsection{Fase 6: Resultaten en Aanbevelingen}
-    \noindent Tot slot worden de resultaten en conclusies van het gehele onderzoek samengevat. Hierbij wordt de verworven informatie beoordeeld in functie van de onderzoeksvraag en doelstellingen. Op basis hiervan worden aanbevelingen geformuleerd voor:
-    
-    \begin{itemize}
-        \item Eventuele toekomstige implementaties van DevSecOps binnen DocShifter.
-        \item Het optimaliseren van de governance- en compliancevereisten.
-        \item Het waarborgen van een continue verbetering van de DevSecOps-processen binnen het bedrijf.
+        \item Longlist en Shortlist van Oplossingen: Het opstellen van een shortlist van tools en frameworks die kunnen bijdragen aan de governance en compliance, inclusief een evaluatie op effectiviteit en toepasbaarheid.
+        \item Proof of Concept: Het uitvoeren van een beperkte implementatie van de geselecteerde oplossingen om de haalbaarheid en effectiviteit in de praktijk te testen.
     \end{itemize}
     
     %---------- Verwachte resultaten ----------------------------------------------

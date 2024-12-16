@@ -26,5 +26,82 @@
 %% Maak voor elke fase (behalve het literatuuronderzoek) een NIEUW HOOFDSTUK aan
 %% en geef het een gepaste titel.
 
-\lipsum[21-25]
+In dit hoofdstuk wordt een overzicht gegeven van de grote fasen van het onderzoek, met toelichting over de doelstellingen en gebruikte onderzoeksmethoden. Deze fasen zijn ontworpen om de centrale onderzoeksvraag systematisch te beantwoorden:
+
+\begin{quote}
+    Welke CI/CD-tool, Jenkins of GitHub Actions, biedt de meest geschikte oplossing voor het verbeteren van de DevOps-processen van DocShifter in termen van prestaties, beveiliging, automatiseringsefficiëntie en integratie met bestaande systemen?
+\end{quote}
+
+Elke fase wordt verantwoord op basis van haar relevantie voor het probleem- en oplossingsdomein.
+
+\section{Fase 1: Literatuuronderzoek}
+\subsection*{Doelstelling}
+Het doel van deze fase was om een theoretisch kader op te stellen en evaluatiecriteria te identificeren voor de vergelijking van CI/CD-tools.
+
+\subsection*{Onderzoeksmethoden}
+Een systematische literatuurstudie werd uitgevoerd, waarbij gebruik is gemaakt van academische publicaties, industriële rapporten en officiële handleidingen van Jenkins en GitHub Actions.
+
+\section{Fase 2: Opstellen van een Proof-of-Concept (PoC)}
+\subsection*{Doelstelling}
+Het doel van deze fase is het ontwerpen van een representatieve Proof-of-Concept (PoC) waarin Jenkins en GitHub Actions worden geëvalueerd met workflows die de complexiteit van DocShifter nabootsen. In plaats van gebruik te maken van de daadwerkelijke repositories van DocShifter, worden vijf Java-repositories aangemaakt met de Maven Quickstart Archetype. Deze repositories bevatten afhankelijkheden die vergelijkbaar zijn met de echte situatie, waardoor een realistische testomgeving wordt gecreëerd.
+
+\subsection*{Onderzoeksmethoden}
+\begin{itemize}
+    \item \textbf{Opzetten van repositories}: Er worden vijf Java-repositories gegenereerd met behulp van Maven Quickstart Archetype. De repositories worden zo geconfigureerd dat er onderlinge afhankelijkheden bestaan: 
+    \begin{itemize}
+        \item Repository 1 dient als basisproject en wordt door alle andere projecten gebruikt.
+        \item Repositories 2 tot en met 5 hebben afhankelijkheden van Repository 1 en elkaar.
+    \end{itemize}
+    \item \textbf{Ontwerp van CI/CD-pipelines}: Pipelines worden ontworpen die de typische workflows van DocShifter simuleren. De workflows omvatten de volgende stappen:
+    \begin{itemize}
+        \item \textbf{Build}: Het compileren van de Java-code.
+        \item \textbf{Test}: Het uitvoeren van unit tests om de kwaliteit van de code te waarborgen.
+        \item \textbf{Deploy}: Simulatie van een deployment naar een mock-omgeving.
+    \end{itemize}
+    \item \textbf{Definiëren van evaluatiecriteria}: Meetbare criteria worden vastgesteld, waaronder:
+    \begin{itemize}
+        \item Prestaties (bijvoorbeeld build-tijd).
+        \item Beveiliging (beheer van secrets en credentials).
+        \item Automatiseringsefficiëntie (gebruiksvriendelijkheid en configuratiegemak).
+        \item Integratie met bestaande systemen (GitHub en Maven). 
+    \end{itemize}
+\end{itemize}
+
+\section{Fase 3: Implementatie van de Proof-of-Concept}
+\subsection*{Doelstelling}
+De implementatie van de CI/CD-pipelines in zowel Jenkins als GitHub Actions, met als doel gegevens te verzamelen die nodig zijn voor een grondige vergelijking van de tools.
+
+\subsection*{Onderzoeksmethoden}
+\begin{itemize}
+    \item \textbf{Configuratie van pipelines}: 
+    \begin{itemize}
+        \item In Jenkins wordt gebruik gemaakt van declaratieve pipelines gedefinieerd in Jenkinsfiles.
+        \item In GitHub Actions worden YAML-configuratiebestanden gebruikt voor het opzetten van identieke workflows.
+    \end{itemize}
+    \item \textbf{Uitvoering van pipelines}: De pipelines worden uitgevoerd om gegevens te verzamelen over:
+    \begin{itemize}
+        \item Build-tijden en foutpercentages.
+        \item Beveiliging, zoals het gebruik van credentials en logs.
+        \item Schaalbaarheid, met name de verwerking van afhankelijkheden.
+    \end{itemize}
+    \item \textbf{Documentatie}: Alle bevindingen, uitdagingen en technische details worden zorgvuldig gedocumenteerd. Dit omvat configuratiebestanden en screenshots van de implementatie.
+\end{itemize}
+
+\section{Fase 4: Data-analyse en Evaluatie}
+\subsection*{Doelstelling}
+Het analyseren van de verzamelde data om de sterke en zwakke punten van beide tools te kwantificeren.
+
+\subsection*{Onderzoeksmethoden}
+\begin{itemize}
+    \item Kwantitatieve analyse van de prestaties, zoals build-tijden, foutpercentages en schaalbaarheid.
+    \item Kwalitatieve evaluatie van gebruiksvriendelijkheid en configuratiegemak.
+\end{itemize}
+
+\section{Verantwoording van de Aanpak}
+De gekozen aanpak combineert theoretische en praktische methoden om een diepgaand inzicht te verkrijgen in de functionaliteiten van Jenkins en GitHub Actions. De literatuurstudie biedt een solide basis, terwijl de PoC de mogelijkheid biedt om de tools in een realistische context te testen. De gestructureerde data-analyse zorgt ervoor dat conclusies goed onderbouwd zijn.
+
+
+
+
+
 

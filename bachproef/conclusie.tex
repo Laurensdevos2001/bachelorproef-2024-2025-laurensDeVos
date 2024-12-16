@@ -2,17 +2,45 @@
 %% Conclusie
 %%=============================================================================
 
-\chapter{Conclusie}%
+\chapter{Conclusie}
 \label{ch:conclusie}
 
-% TODO: Trek een duidelijke conclusie, in de vorm van een antwoord op de
-% onderzoeksvra(a)g(en). Wat was jouw bijdrage aan het onderzoeksdomein en
-% hoe biedt dit meerwaarde aan het vakgebied/doelgroep? 
-% Reflecteer kritisch over het resultaat. In Engelse teksten wordt deze sectie
-% ``Discussion'' genoemd. Had je deze uitkomst verwacht? Zijn er zaken die nog
-% niet duidelijk zijn?
-% Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
-%onderzoek?
+De centrale onderzoeksvraag van deze bachelorproef was: 
+\emph{“Welke Continuous Integration/Continuous Deployment (CI/CD)-tool, Jenkins of GitHub Actions, biedt de meest geschikte oplossing voor het verbeteren van de DevOps-processen van DocShifter in termen van prestaties, beveiliging, automatiseringsefficiëntie en integratie met bestaande systemen?”} 
 
-\lipsum[76-80]
+Op basis van een uitgebreide literatuurstudie en de implementatie van een Proof-of-Concept (PoC) kan gesteld worden dat beide tools unieke voordelen en beperkingen hebben, afhankelijk van de specifieke behoeften van een organisatie.
+
+\paragraph{Antwoord op de onderzoeksvraag}
+De evaluatie heeft aangetoond dat:
+\begin{itemize}
+    \item \textbf{Jenkins} zich onderscheidt door zijn flexibiliteit en schaalbaarheid, dankzij uitgebreide plugin-ondersteuning en het vermogen om complexe afhankelijkheden tussen repositories te beheren. Dit maakt het een robuuste keuze voor organisaties met complexe workflows zoals DocShifter.
+    \item \textbf{GitHub Actions} blinkt uit in gebruiksgemak en naadloze integratie binnen het GitHub-ecosysteem. De eenvoud van configuratie en de cloud-gebaseerde schaalbaarheid maken het een aantrekkelijke optie voor kleinere of minder complexe projecten.
+\end{itemize}
+
+Voor DocShifter, dat afhankelijk is van een netwerk van onderling afhankelijke repositories en een schaalbare infrastructuur vereist, biedt Jenkins de meest geschikte oplossing. De mogelijkheid om agents dynamisch in te richten en geavanceerde afhankelijkheidsbeheermechanismen te gebruiken, sluit goed aan bij de behoeften van het bedrijf.
+
+\paragraph{Relevantie van de resultaten}
+De resultaten van dit onderzoek zijn relevant voor organisaties die voor de uitdaging staan om een CI/CD-tool te kiezen die zowel technische als operationele eisen ondersteunt. De vergelijkende analyse biedt praktische inzichten die bijdragen aan een weloverwogen keuze en kan dienen als referentie voor toekomstige evaluaties van CI/CD-tools.
+
+\paragraph{Reflectie en discussie}
+Hoewel de resultaten grotendeels overeenkomen met de verwachtingen, zijn er enkele aandachtspunten die verdere studie verdienen:
+\begin{itemize}
+    \item \textbf{Beveiliging}: Hoewel beide tools robuuste beveiligingsmechanismen bieden, zoals secrets management, is een meer gedetailleerde vergelijking nodig van hun naleving van industrienormen zoals ISO 27001.
+    \item \textbf{Kosten}: Een diepgaand kostenoverzicht, inclusief licenties, infrastructuurkosten en onderhoud, kan aanvullende inzichten bieden.
+    \item \textbf{Automatiseringsefficiëntie}: De beperkingen van GitHub Actions met betrekking tot afhankelijkheidsbeheer zouden verder kunnen worden onderzocht, met name door third-party oplossingen of custom workflows.
+\end{itemize}
+
+\paragraph{Bijdrage aan het vakgebied}
+Deze bachelorproef biedt een gestructureerde methodologie voor de evaluatie van CI/CD-tools en demonstreert hoe theoretische inzichten kunnen worden vertaald naar praktische toepassingen. De Proof-of-Concept vormt een nuttige referentie voor organisaties die vergelijkbare evaluaties willen uitvoeren.
+
+\paragraph{Aanbevelingen voor toekomstig onderzoek}
+Op basis van deze studie kunnen de volgende richtingen voor toekomstig onderzoek worden voorgesteld:
+\begin{itemize}
+    \item Onderzoek naar de prestaties van Jenkins en GitHub Actions in cloud-native omgevingen, zoals Kubernetes-gebaseerde infrastructuren.
+    \item Analyse van de impact van geavanceerde beveiligingsintegraties (bijvoorbeeld DevSecOps) in beide tools.
+    \item Vergelijking van CI/CD-tools in termen van ondersteuning voor andere programmeertalen en frameworks buiten Java en Maven.
+\end{itemize}
+
+Deze aanbevelingen bieden een waardevolle basis voor verdere optimalisatie van DevOps-processen in een steeds evoluerend technologisch landschap.
+
 

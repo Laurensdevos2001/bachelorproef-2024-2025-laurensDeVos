@@ -4,33 +4,74 @@
 
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
+\section{Context en Achtergrond}
+In een wereld waar softwareontwikkeling steeds sneller en complexer wordt, speelt Continuous Integration/Continuous Deployment (CI/CD) een sleutelrol binnen moderne DevOps-praktijken. CI/CD-tools bieden organisaties de mogelijkheid om software iteratief en betrouwbaar te ontwikkelen, te testen en uit te rollen. Voor een bedrijf als DocShifter, dat gespecialiseerd is in documentconversietechnologie, zijn dergelijke processen essentieel om concurrerend en compliant te blijven. De keuze van de juiste CI/CD-tool kan een aanzienlijke invloed hebben op de efficiëntie en kwaliteit van hun softwareontwikkelings- en uitrolprocessen.
 
-De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
+\section{Afbakenen van het onderwerp}
+Dit onderzoek richt zich op twee toonaangevende CI/CD-tools: Jenkins en GitHub Actions. Beide tools bieden krachtige oplossingen, maar verschillen aanzienlijk in hun architectuur, gebruiksgemak en integratiemogelijkheden. Voor DocShifter, dat afhankelijk is van geavanceerde automatiseringsworkflows en veilige gegevensverwerking, is het cruciaal om de tool te kiezen die het beste aansluit bij hun specifieke behoeften.
+\\
+Het onderzoek beperkt zich tot het evalueren van Jenkins en GitHub Actions op basis van vier belangrijke criteria: prestaties, beveiliging, automatiseringsefficiëntie en integratie met bestaande systemen. Andere CI/CD-tools vallen buiten de scope van dit onderzoek.
 
-\begin{itemize}
-  \item context, achtergrond
-  \item afbakenen van het onderwerp
-  \item verantwoording van het onderwerp, methodologie
-  \item probleemstelling
-  \item onderzoeksdoelstelling
-  \item onderzoeksvraag
-  \item \ldots
-\end{itemize}
+\section{Verantwoording van het onderwerp}
+De keuze voor dit onderwerp is ingegeven door de groeiende behoefte van DocShifter om hun DevOps-processen te optimaliseren. CI/CD-tools zijn essentieel voor moderne softwareontwikkeling, en een goed geïnformeerde keuze tussen Jenkins en GitHub Actions kan niet alleen bijdragen aan efficiëntere processen, maar ook aan betere beveiliging en schaalbaarheid. 
+
+De methodologie bestaat uit een combinatie van een literatuurstudie en een proof of concept (PoC). Deze aanpak is gekozen om zowel theoretische als praktische inzichten te verkrijgen en een gefundeerd advies te kunnen geven.
+
 
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
 
-Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+DocShifter ondervindt uitdagingen bij het implementeren van efficiënte en veilige CI/CD-processen. Een van de kernvragen is welke CI/CD-tool het beste aansluit bij hun behoeften, gezien hun afhankelijkheid van complexe workflows en het belang van gegevensbescherming. Jenkins biedt flexibiliteit en maatwerk, terwijl GitHub Actions eenvoud en naadloze integratie met GitHub biedt. Het gebrek aan een duidelijk antwoord op deze vraag maakt dit onderzoek noodzakelijk.
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
 
-Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+De onderzoeksvraag voor deze bachelorproef is:
 
+"Welke Continuous Integration/Continuous Deployment (CI/CD)-tool, Jenkins of GitHub Actions, biedt de meest geschikte oplossing voor het verbeteren van de DevOps-processen van DocShifter in termen van prestaties, beveiliging, automatiseringsefficiëntie en integratie met bestaande systemen?"
+\\
+Deze vraag is specifiek gericht op het evalueren van de twee tools binnen de context van DocShifter’s behoeften, waarbij criteria zoals snelheid, schaalbaarheid, en veiligheid centraal staan.
+\\
+Om de hoofdonderzoeksvraag verder te specificeren en het onderzoek te structureren, worden de volgende deelvragen opgesteld:
+\\
+\begin{itemize}
+    \item Wat zijn de technische verschillen tussen Jenkins en GitHub Actions in termen van architectuur en gebruiksgemak?
+    \item Hoe presteren Jenkins en GitHub Actions bij het implementeren van een representatieve CI/CD-pipeline voor DocShifter?
+    \item Welke beveiligingsmaatregelen en -functionaliteiten bieden de tools, en hoe goed sluiten deze aan bij de eisen van DocShifter?
+    \item Hoe schaalbaar en onderhoudsvriendelijk zijn Jenkins en GitHub Actions voor toekomstige groei binnen de organisatie?
+    \item Wat zijn de totale kosten (licentie, implementatie, onderhoud) van beide tools voor een vergelijkbaar gebruiksscenario?
+\end{itemize}
+
+Deze deelvragen helpen om een systematische aanpak te waarborgen en bieden een overzichtelijk kader voor de uitvoering van zowel de literatuurstudie als de praktische implementatie.
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
 
-Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+De doelstelling van deze bachelorproef is om een onderbouwd advies te formuleren over de meest geschikte CI/CD-tool voor DocShifter, op basis van een vergelijkende analyse van Jenkins en GitHub Actions. Dit advies zal gebaseerd zijn op zowel een literatuurstudie als een praktische implementatie (proof of concept). Het beoogde resultaat bestaat uit de volgende componenten:
+
+\begin{enumerate}
+    \item \textbf{Vergelijkende studie}:
+    \begin{itemize}
+        \item Een diepgaande vergelijking van Jenkins en GitHub Actions op basis van prestaties, beveiliging, automatiseringsefficiëntie, en integratiegemak.
+        \item Identificeren van sterke en zwakke punten van beide tools in relatie tot DocShifter’s eisen.
+    \end{itemize}
+    \item \textbf{Proof of Concept (PoC)}:
+    \begin{itemize}
+        \item Het opzetten en evalueren van een representatieve CI/CD-pipeline in zowel Jenkins als GitHub Actions.
+        \item Praktische inzichten verschaffen over de gebruiksvriendelijkheid, betrouwbaarheid, en schaalbaarheid van de tools.
+    \end{itemize}
+    \item \textbf{Aanbevelingen}:
+    \begin{itemize}
+        \item Het formuleren van een helder advies over welke tool het beste aansluit bij de behoeften van DocShifter.
+        \item Concrete richtlijnen bieden voor implementatie, inclusief mogelijke verbeteringen en optimalisaties.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Criteria voor succes}
+\begin{itemize}
+    \item Een volledig uitgewerkte vergelijking die gebaseerd is op concrete data en observaties.
+    \item Een succesvolle implementatie van de PoC in beide tools.
+    \item Een helder en toepasbaar adviesrapport dat de management- en engineeringteams van DocShifter ondersteunt in hun besluitvorming.
+\end{itemize}
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
 \label{sec:opzet-bachelorproef}
@@ -45,6 +86,6 @@ In Hoofdstuk~\ref{ch:stand-van-zaken} wordt een overzicht gegeven van de stand v
 
 In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de onderzoeksvragen.
 
-% TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
+In Hoofdstuk~\ref{ch:Proof-Of-Concept} wordt een Proof Of Concept opgesteld van CI/CD pipelines in GitHub actions en Jenkins.
 
 In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
