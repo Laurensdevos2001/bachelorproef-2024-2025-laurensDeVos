@@ -6,6 +6,10 @@
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 
+In dit hoofdstuk wordt de stand van zaken besproken met betrekking tot de implementatie van Continuous Integration (CI) en Continuous Deployment (CD) binnen softwareontwikkelingsprojecten. CI/CD-methodologieën spelen een cruciale rol in het optimaliseren van de ontwikkelings- en implementatiecycli en worden beschouwd als kerncomponenten van de DevOps-praktijk. Het doel van dit hoofdstuk is om een theoretisch kader te bieden dat dient als basis voor de verdere analyse en vergelijking van Jenkins en GitHub Actions, twee toonaangevende CI/CD-tools.//
+
+De structuur van dit hoofdstuk is als volgt: eerst worden de kernconcepten van CI/CD uitgelegd, inclusief hun rol binnen het bredere DevOps-ecosysteem. Vervolgens worden de evaluatiecriteria toegelicht die essentieel zijn voor het selecteren van een geschikte CI/CD-tool, zoals prestaties, beveiliging en automatiseringsefficiëntie. Daarna volgt een uitgebreide bespreking van Jenkins en GitHub Actions, inclusief hun kenmerken, voordelen, beperkingen en toepasbaarheid in de context van complexe softwareprojecten. Tot slot wordt een vergelijkende analyse gepresenteerd die inzicht geeft in de sterke en zwakke punten van beide tools.
+
 \section{Inleiding tot CI/CD en DevOps}
 
 De concepten Continuous Integration (CI) en Continuous Deployment (CD) zijn fundamenteel geworden in moderne softwareontwikkelingspraktijken. Deze methodologieën bieden organisaties de mogelijkheid om software op een snellere, meer betrouwbare en schaalbare manier te ontwikkelen en uit te rollen. CI/CD vormt een kerncomponent van DevOps, een filosofie en praktijk die gericht is op nauwe samenwerking tussen ontwikkelings- en operationele teams om de levering van software te versnellen en de kwaliteit te verbeteren.
@@ -50,22 +54,57 @@ Hoewel CI/CD aanzienlijke voordelen biedt, brengt de implementatie ervan ook uit
 
 
 \subsection{De toekomst van CI/CD in DevOps}
-De toekomst van CI/CD richt zich op integratie met beveiligingspraktijken (DevSecOps) en de toepassing van machine learning in geautomatiseerde pipelines. DevSecOps stelt organisaties in staat om beveiligingstests en compliancechecks vroeg en vaak in de ontwikkelingscyclus uit te voeren. Daarnaast zal machine learning naar verwachting processen zoals foutdetectie en resource-optimalisatie verder verbeteren. \autocite{marques2023}
+De toekomst van CI/CD richt zich op integratie met beveiligingspraktijken (DevSecOps) en de toepassing van machine learning in geautomatiseerde pipelines. DevSecOps stelt organisaties in staat om beveiligingstests vroeg in de ontwikkelingscyclus uit te voeren. Daarnaast biedt het mogelijkheden om compliancechecks regelmatig te integreren gedurende het hele proces. Machine learning zal naar verwachting processen zoals foutdetectie en resource-optimalisatie verder verbeteren. \autocite{marques2023}
 
-\subsection{Overzicht van de CI/CD pijplijn}
+\section{Best Practices in CI/CD}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=\linewidth]{"C:/Users/laure/Documents/bachelorproef-2024-2025-laurensDeVos/graphics/cicd-pipeline.png"}
-    \caption{Overzicht van een typische CI/CD-pijplijn}
-    \label{fig:cicd-pipeline}
-    \autocite{GitHub2022}
-\end{figure}
+Het implementeren van Continuous Integration (CI) en Continuous Deployment (CD) is essentieel voor het verbeteren van de efficiëntie en kwaliteit in moderne softwareontwikkeling. Onderzoek heeft aangetoond dat het toepassen van best practices binnen CI/CD-processen leidt tot snellere feedbackloops, verhoogde productiviteit en een hogere softwarekwaliteit \autocite{shahin2017}.
 
+\subsection{Versiebeheer voor productie-artifacten}
+Het toepassen van versiebeheer op alle componenten van een project, inclusief code, configuratiebestanden en documentatie, zorgt voor traceerbaarheid en maakt samenwerking efficiënter. Dit is een fundamentele stap in het CI/CD-proces \autocite{forsgren2018}.
+
+\subsection{Automatisering van het build- en deploymentproces}
+Automatisering vermindert de kans op menselijke fouten en versnelt het releaseproces. Door het gebruik van geautomatiseerde scripts en tools kunnen builds en deployments consistent en betrouwbaar worden uitgevoerd \autocite{shahin2017}.
+
+\subsection{Continuous Integration}
+Het regelmatig integreren van codewijzigingen in een gedeelde repository, gevolgd door geautomatiseerde builds en tests, helpt bij het vroegtijdig detecteren van integratieproblemen en verbetert de softwarekwaliteit \autocite{forsgren2018}.
+
+\subsection{Trunk-based development}
+Het beperken van langdurige feature branches en het frequent integreren van wijzigingen in de hoofdbranch minimaliseert integratieconflicten en bevordert een stabiele codebasis \autocite{forsgren2018}.
+
+\subsection{Testautomatisering}
+Geautomatiseerde tests, zoals unit tests en integratietests, zorgen voor snelle feedback over de kwaliteit van de code en detecteren regressies vroegtijdig. Dit draagt bij aan een hogere productkwaliteit \autocite{wang2022}.
+
+\subsection{Beheer van testdata}
+Het effectief beheren van testdata is cruciaal voor betrouwbare en reproduceerbare tests. Dit omvat het anonimiseren van gevoelige gegevens en het creëren van representatieve datasets \autocite{shahin2017}.
+
+\subsection{Shift Left on Security}
+Het integreren van beveiligingscontroles in de vroege stadia van de ontwikkelingscyclus helpt bij het identificeren en verhelpen van kwetsbaarheden voordat ze in productie worden genomen \autocite{forsgren2018}.
+
+\subsection{Losgekoppelde architectuur}
+Een modulaire architectuur maakt het mogelijk om componenten onafhankelijk te ontwikkelen, testen en implementeren, wat de flexibiliteit en schaalbaarheid van het systeem vergroot \autocite{shahin2017}.
+
+\subsection{Feedback van gebruikers}
+Het continu verzamelen van feedback van eindgebruikers en deze integreren in het ontwikkelproces zorgt ervoor dat het product aansluit bij de behoeften van de gebruikers en verhoogt de klanttevredenheid \autocite{forsgren2018}.
+
+\subsection{Workflowvisualisatie}
+Het in kaart brengen en visualiseren van het ontwikkelproces helpt bij het identificeren van knelpunten en inefficiënties, waardoor teams gerichte verbeteringen kunnen doorvoeren \autocite{shahin2017}.
+
+\subsection{Werken in kleine batches}
+Het implementeren van kleine, incrementele wijzigingen maakt het eenvoudiger om fouten op te sporen en te corrigeren, en versnelt de feedbackloop \autocite{forsgren2018}.
+
+\subsection{Proactieve monitoring}
+Het continu monitoren van de prestaties en betrouwbaarheid van systemen maakt het mogelijk om problemen vroegtijdig te detecteren en aan te pakken, wat de stabiliteit van het product verhoogt \autocite{shahin2017}.
+
+Door deze best practices te implementeren, kunnen organisaties de effectiviteit van hun CI/CD-processen maximaliseren en hoogwaardige software sneller en betrouwbaarder leveren.
 
 \section{Evaluatiecriteria}
 
 Het selecteren van een CI/CD-tool vereist een gestructureerde evaluatie van kritieke criteria die aansluiten bij de operationele en strategische behoeften van een organisatie. In deze sectie worden vijf kerncriteria besproken die organisaties kunnen helpen bij het kiezen van de juiste CI/CD-oplossing. De besproken criteria zijn gebaseerd op een combinatie van academisch onderzoek en industriële inzichten.
+
+\subsection{Integratie met bestaande systemen}
+Een CI/CD-tool moet naadloos integreren met de bestaande infrastructuur en tooling van een organisatie. Shahin et al. \autocite{shahin2017} benadrukken dat compatibiliteit met tools zoals versiebeheer, containerplatforms en cloudservices van cruciaal belang is voor een soepele workflow.
+Belangrijke integratiecriteria zijn: \begin{itemize} \item Versiebeheersystemen: Ondersteuning voor Git en andere versiebeheertools is essentieel. \autocite{springer2023ci} \item Container- en cloudondersteuning: Integratie met Docker, Kubernetes, en cloudproviders zoals AWS en Azure maakt flexibele implementaties mogelijk. \autocite{ieee2021cicd} \item Third-party tools: Compatibiliteit met projectmanagementtools zoals JIRA of monitoringtools zoals Prometheus verhoogt de productiviteit. \end{itemize}
 
 \subsection{Prestaties}
 De prestaties van een CI/CD-tool bepalen hoe efficiënt en betrouwbaar build- en deploymentprocessen worden uitgevoerd. Shahin et al. \autocite{shahin2017} benadrukken dat snellere buildtijden en verbeterde schaalbaarheid cruciaal zijn voor moderne softwareontwikkeling.
@@ -88,13 +127,10 @@ Volgens recente studies \autocite{forsgren2018, githubdocs2023actions} is automa
     \item \textbf{Integratie met testtools}: Naadloze integratie met frameworks zoals Selenium, JUnit en Pytest stelt ontwikkelaars in staat om tests volledig te automatiseren en snel feedback te ontvangen \autocite{smith2023automation}.
 \end{itemize}
 
-
-\subsection{Integratie met bestaande systemen}
-Een CI/CD-tool moet naadloos integreren met de bestaande infrastructuur en tooling van een organisatie. Shahin et al. \autocite{shahin2017} benadrukken dat compatibiliteit met tools zoals versiebeheer, containerplatforms en cloudservices van cruciaal belang is voor een soepele workflow.
-Belangrijke integratiecriteria zijn: \begin{itemize} \item Versiebeheersystemen: Ondersteuning voor Git en andere versiebeheertools is essentieel. \autocite{springer2023ci} \item Container- en cloudondersteuning: Integratie met Docker, Kubernetes, en cloudproviders zoals AWS en Azure maakt flexibele implementaties mogelijk. \autocite{ieee2021cicd} \item Third-party tools: Compatibiliteit met projectmanagementtools zoals JIRA of monitoringtools zoals Prometheus verhoogt de productiviteit. \end{itemize}
-
 \subsection{Kosten}
 De totale kosten van een CI/CD-tool omvatten niet alleen licenties, maar ook infrastructuur, onderhoud en training. Volgens een studie in IEEE Xplore \autocite{ieee2023costbenefit} moeten organisaties rekening houden met: \begin{itemize} \item Licentiekosten: Sommige tools zijn open-source en gratis, terwijl andere abonnementen of op gebruik gebaseerde kosten vereisen. \item Onderhoud en infrastructuur: Self-hosted oplossingen brengen extra server- en onderhoudskosten met zich mee. \item Return on Investment (ROI): De efficiëntie en tijdsbesparing die een tool biedt, moeten opwegen tegen de initiële en doorlopende kosten. \end{itemize}
+
+
  
 \section{Beschrijving van Jenkins}
 
@@ -145,15 +181,6 @@ Hoewel Jenkins een krachtige tool is, wordt het vaak vergeleken met modernere op
     \item GitHub Actions biedt een strakkere integratie met GitHub-repositories en heeft een eenvoudigere configuratie dankzij YAML-scripts.
     \item GitLab CI/CD biedt geïntegreerde monitoring- en beveiligingsfunctionaliteiten, terwijl Jenkins meer afhankelijk is van plugins voor dergelijke functies.
     \item Jenkins onderscheidt zich door zijn aanpasbaarheid en flexibiliteit, maar vergt meer onderhoud en expertise \autocite{shahin2017}.
-\end{itemize}
-
-\subsection{Toepassingen in de Industrie}
-
-Jenkins wordt gebruikt in uiteenlopende sectoren, van financiële diensten tot e-commerce en gezondheidszorg. Het is bijzonder geschikt voor:
-\begin{itemize}
-    \item \textbf{Grootschalige projecten}: Dankzij de schaalbare architectuur kan Jenkins gelijktijdige builds en tests ondersteunen.
-    \item \textbf{Cloud-native ontwikkeling}: Integraties met Kubernetes en Docker maken Jenkins geschikt voor containergebaseerde applicaties \autocite{amaral2021}.
-    \item \textbf{Snelle feedback loops}: Jenkins versnelt de ontwikkelcyclus door geautomatiseerde builds en tests, wat vooral belangrijk is in agile omgevingen.
 \end{itemize}
 
 \subsection{Conclusie}
@@ -265,49 +292,6 @@ GitHub Actions is specifiek geoptimaliseerd voor GitHub-repositories. Voor DocSh
 Voor DocShifter, een groot programma met meerdere onderling afhankelijke componenten, biedt Jenkins duidelijke voordelen. De mogelijkheid om complexe afhankelijkheden te beheren, specifieke agents toe te wijzen aan bepaalde taken en de uitgebreide plugin-ondersteuning maken het beter geschikt voor de behoeften van DocShifter. GitHub Actions is een uitstekende keuze voor projecten binnen het GitHub-ecosysteem zonder uitgebreide afhankelijkheden tussen repositories. Echter, voor DocShifter’s schaal en complexiteit is Jenkins beter gepositioneerd om zowel flexibiliteit als schaalbaarheid te bieden.
 
 
-\section{Best Practices in CI/CD}
-
-Het implementeren van Continuous Integration (CI) en Continuous Deployment (CD) is essentieel voor het verbeteren van de efficiëntie en kwaliteit in moderne softwareontwikkeling. Onderzoek heeft aangetoond dat het toepassen van best practices binnen CI/CD-processen leidt tot snellere feedbackloops, verhoogde productiviteit en een hogere softwarekwaliteit \autocite{shahin2017}.
-
-\subsection{Versiebeheer voor productie-artifacten}
-Het toepassen van versiebeheer op alle componenten van een project, inclusief code, configuratiebestanden en documentatie, zorgt voor traceerbaarheid en maakt samenwerking efficiënter. Dit is een fundamentele stap in het CI/CD-proces \autocite{forsgren2018}.
-
-\subsection{Automatisering van het build- en deploymentproces}
-Automatisering vermindert de kans op menselijke fouten en versnelt het releaseproces. Door het gebruik van geautomatiseerde scripts en tools kunnen builds en deployments consistent en betrouwbaar worden uitgevoerd \autocite{shahin2017}.
-
-\subsection{Continuous Integration}
-Het regelmatig integreren van codewijzigingen in een gedeelde repository, gevolgd door geautomatiseerde builds en tests, helpt bij het vroegtijdig detecteren van integratieproblemen en verbetert de softwarekwaliteit \autocite{forsgren2018}.
-
-\subsection{Trunk-based development}
-Het beperken van langdurige feature branches en het frequent integreren van wijzigingen in de hoofdbranch minimaliseert integratieconflicten en bevordert een stabiele codebasis \autocite{forsgren2018}.
-
-\subsection{Testautomatisering}
-Geautomatiseerde tests, zoals unit tests en integratietests, zorgen voor snelle feedback over de kwaliteit van de code en detecteren regressies vroegtijdig. Dit draagt bij aan een hogere productkwaliteit \autocite{wang2022}.
-
-\subsection{Beheer van testdata}
-Het effectief beheren van testdata is cruciaal voor betrouwbare en reproduceerbare tests. Dit omvat het anonimiseren van gevoelige gegevens en het creëren van representatieve datasets \autocite{shahin2017}.
-
-\subsection{Shift Left on Security}
-Het integreren van beveiligingscontroles in de vroege stadia van de ontwikkelingscyclus helpt bij het identificeren en verhelpen van kwetsbaarheden voordat ze in productie worden genomen \autocite{forsgren2018}.
-
-\subsection{Losgekoppelde architectuur}
-Een modulaire architectuur maakt het mogelijk om componenten onafhankelijk te ontwikkelen, testen en implementeren, wat de flexibiliteit en schaalbaarheid van het systeem vergroot \autocite{shahin2017}.
-
-\subsection{Feedback van gebruikers}
-Het continu verzamelen van feedback van eindgebruikers en deze integreren in het ontwikkelproces zorgt ervoor dat het product aansluit bij de behoeften van de gebruikers en verhoogt de klanttevredenheid \autocite{forsgren2018}.
-
-\subsection{Workflowvisualisatie}
-Het in kaart brengen en visualiseren van het ontwikkelproces helpt bij het identificeren van knelpunten en inefficiënties, waardoor teams gerichte verbeteringen kunnen doorvoeren \autocite{shahin2017}.
-
-\subsection{Werken in kleine batches}
-Het implementeren van kleine, incrementele wijzigingen maakt het eenvoudiger om fouten op te sporen en te corrigeren, en versnelt de feedbackloop \autocite{forsgren2018}.
-
-\subsection{Proactieve monitoring}
-Het continu monitoren van de prestaties en betrouwbaarheid van systemen maakt het mogelijk om problemen vroegtijdig te detecteren en aan te pakken, wat de stabiliteit van het product verhoogt \autocite{shahin2017}.
-
-Door deze best practices te implementeren, kunnen organisaties de effectiviteit van hun CI/CD-processen maximaliseren en hoogwaardige software sneller en betrouwbaarder leveren.
-
-
 \section{conclusie van de literatuurstudie}
 
 
@@ -319,6 +303,6 @@ Daarnaast heeft de studie de kritieke criteria belicht die een rol spelen bij de
 
 Tot slot toont de literatuurstudie aan dat de toekomst van CI/CD zich richt op verdere integratie met beveiligingspraktijken (DevSecOps) en het gebruik van machine learning voor geavanceerde automatisering en foutdetectie. Organisaties die deze innovaties omarmen, kunnen verwachten hun softwareontwikkelingsprocessen aanzienlijk te optimaliseren.
 
-Met deze inzichten biedt de literatuurstudie een solide basis voor het verdere onderzoek in deze bachelorproef, waarin de focus zal liggen op het vergelijken van Jenkins en GitHub Actions binnen de context van DocShifter's specifieke eisen en workflows.
+Op basis van deze inzichten biedt de literatuurstudie een stevige basis voor het vervolgonderzoek in deze bachelorproef. De nadruk zal liggen op het vergelijken van Jenkins en GitHub Actions binnen de context van DocShifter's specifieke eisen en workflows.
 
 

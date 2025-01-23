@@ -412,11 +412,7 @@ Hieronder volgt het volledige YAML-bestand van de workflow voor \texttt{Repo1}:
               GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 \end{verbatim}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=\linewidth]{"C:/Users/laure/Documents/bachelorproef-2024-2025-laurensDeVos/graphics/Repo1Geslaagd.png"}
-    \caption{Overzicht van een succesvolle uitvoering van de workflow in \texttt{Repo1}. Elke job is voltooid, zoals aangegeven door de vinkjes.}
-\end{figure}
+Voor een visueel overzicht van een succesvolle uitvoering van de workflow in \texttt{Repo1}, zie Appendix~\ref{fig:workflow-repo1}.
 
 \paragraph{Specifieke workflows voor downstream repositories}
 Repositories zoals \texttt{Repo2} tot \texttt{Repo5} vereisen aanvullende configuraties vanwege hun afhankelijkheden. Voor deze repositories moet eerst worden gecontroleerd of de artefacten van de bijbehorende afhankelijkheden beschikbaar zijn in de GitHub Package Registry. Indien de benodigde artefacten niet beschikbaar zijn, wordt de workflow van de afhankelijke repository gestart via een \texttt{repository\_dispatch}-event om de artefacten alsnog te genereren.
@@ -572,6 +568,7 @@ Bij \texttt{Repo5} is de configuratie complexer omdat authenticatie vereist is o
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{"C:/Users/laure/Documents/bachelorproef-2024-2025-laurensDeVos/graphics/packages5.png"}
+    \caption{pom.xml van repo5.}
     \label{fig:packages5}
 \end{figure}
 
